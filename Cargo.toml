@@ -9,6 +9,10 @@ name = "___name___"
 path = "./src/bin/main.rs"
 
 [features]
+# Need to set chip otherwise rust-analyzer gets confused
+# (override using cargo build/run --no-default-features --features ...)
+default = ["esp32c3"]
+
 esp32s3 = [
     "esp-hal/esp32s3",
     "esp-bootloader-esp-idf/esp32s3",
