@@ -3,6 +3,22 @@
 version = 4
 
 [[package]]
+name = "___name___"
+version = "0.1.0"
+dependencies = [
+ "critical-section",
+ "defmt 1.0.1",
+ "defmt-rtt",
+ "embassy-executor",
+ "embassy-time",
+ "esp-alloc",
+ "esp-backtrace",
+ "esp-bootloader-esp-idf",
+ "esp-hal",
+ "esp-rtos",
+]
+
+[[package]]
 name = "allocator-api2"
 version = "0.3.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -858,22 +874,6 @@ dependencies = [
  "futures-task",
  "pin-project-lite",
  "pin-utils",
-]
-
-[[package]]
-name = "fw"
-version = "0.1.0"
-dependencies = [
- "critical-section",
- "defmt 1.0.1",
- "defmt-rtt",
- "embassy-executor",
- "embassy-time",
- "esp-alloc",
- "esp-backtrace",
- "esp-bootloader-esp-idf",
- "esp-hal",
- "esp-rtos",
 ]
 
 [[package]]
