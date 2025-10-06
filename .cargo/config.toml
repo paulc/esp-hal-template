@@ -1,0 +1,17 @@
+[env]
+DEFMT_LOG="info"
+
+[target.xtensa-esp32s3-none-elf]
+runner = "probe-rs run --chip=esp32s3 --preverify --always-print-stacktrace --no-location --catch-hardfault"
+rustflags = ["-C", "link-arg=-nostartfiles", "-C", "link-arg=-Tdefmt.x", "-C", "link-arg=-Tlinkall.x"]
+
+[target.riscv32imc-unknown-none-elf]
+runner = "probe-rs run --chip=esp32c3 --preverify --always-print-stacktrace --no-location --catch-hardfault"
+rustflags = ["-C", "force-frame-pointers", "-C", "link-arg=-Tdefmt.x", "-C", "link-arg=-Tlinkall.x"]
+
+[target.riscv32imac-unknown-none-elf]
+runner = "probe-rs run --chip=esp32c6 --preverify --always-print-stacktrace --no-location --catch-hardfault"
+rustflags = ["-C", "force-frame-pointers", "-C", "link-arg=-Tdefmt.x", "-C", "link-arg=-Tlinkall.x"]
+
+[unstable]
+build-std = ["alloc", "core"]
