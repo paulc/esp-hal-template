@@ -12,6 +12,7 @@ use esp_hal::timer::timg::TimerGroup;
 use esp_hal::interrupt::software::SoftwareInterruptControl;
 
 use defmt_rtt as _;
+use esp_alloc as _;
 use esp_backtrace as _;
 
 use embassy_executor::Spawner;
@@ -43,6 +44,7 @@ async fn run() {
 #[esp_rtos::main]
 async fn main(spawner: Spawner) {
     let peripherals = esp_hal::init(esp_hal::Config::default());
+    esp_alloc::heap_allocator!(size: 72 * 1024);
 
     defmt::info!("Init!");
 
