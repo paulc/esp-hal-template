@@ -57,7 +57,7 @@ async fn main(spawner: Spawner) {
         sw_int.software_interrupt0,
     );
 
-    spawner.spawn(run()).ok();
+    spawner.spawn(run().expect("Task Error: run()"));
 
     loop {
         defmt::info!("Bing!");
